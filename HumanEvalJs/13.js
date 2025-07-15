@@ -1,18 +1,15 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
-
 /**
  * Return a greatest common divisor of two integers a and b
- *
- * @param {number} a - First integer.
- * @param {number} b - Second integer.
- * @returns {number} Greatest common divisor.
- *
- * @example
- * greatestCommonDivisor(3, 5); // 1
- * greatestCommonDivisor(25, 15); // 5
- */
+*
+* @param {number} a - First integer.
+* @param {number} b - Second integer.
+* @returns {number} Greatest common divisor.
+*
+* @example
+* greatestCommonDivisor(3, 5); // 1
+* greatestCommonDivisor(25, 15); // 5
+*/
 function greatestCommonDivisor(a, b) {
 //// BEGIN - CANONICAL SOLUTION
     while (b) {
@@ -27,6 +24,8 @@ const METADATA = {
     author: 'jt',
     dataset: 'test'
 };
+
+const assert = require('assert');
 
 function check(candidate) {
     assert.strictEqual(candidate(3, 7), 1);

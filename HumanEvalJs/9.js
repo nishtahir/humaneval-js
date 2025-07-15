@@ -1,7 +1,4 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
-
 /**
  * From a given list of integers, generate a list of rolling maximum element found until given moment
  * in the sequence.
@@ -10,12 +7,12 @@ const assert = require('assert');
  * @example
  * // returns [1, 2, 3, 3, 3, 4, 4]
  * rolling_max([1, 2, 3, 2, 3, 4, 2]);
- */
+*/
 function rolling_max(numbers) {
 //// BEGIN - CANONICAL SOLUTION
     let running_max = null;
     const result = [];
-
+    
     for (const n of numbers) {
         if (running_max === null) {
             running_max = n;
@@ -24,11 +21,12 @@ function rolling_max(numbers) {
         }
         result.push(running_max);
     }
-
+    
     return result;
 }
 
 //// BEGIN - TEST
+const assert = require('assert');
 
 const METADATA = {
     author: 'jt',

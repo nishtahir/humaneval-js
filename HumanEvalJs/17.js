@@ -14,14 +14,15 @@
  * parseMusic('o o| .| o| o| .| .| .| .| o o')
  * // returns [4, 2, 1, 2, 2, 1, 1, 1, 1, 4, 4]
  */
-//// BEGIN - CANONICAL SOLUTION
 function parseMusic(musicString) {
+//// BEGIN - CANONICAL SOLUTION
     const noteMap = { 'o': 4, 'o|': 2, '.|': 1 };
     return musicString.split(' ').filter(x => x).map(x => noteMap[x]);
 }
+
 //// BEGIN - TEST
-const assert = require('assert');
 const METADATA = { author: 'jt', dataset: 'test' };
+const assert = require('assert');
 
 function check(candidate) {
     assert.deepStrictEqual(candidate(''), []);

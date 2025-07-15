@@ -9,8 +9,8 @@
  * longest(['a', 'b', 'c']) // 'a'
  * longest(['a', 'bb', 'ccc']) // 'ccc'
  */
-//// BEGIN - CANONICAL SOLUTION
 function longest(strings) {
+//// BEGIN - CANONICAL SOLUTION
     if (!strings || strings.length === 0) {
         return null;
     }
@@ -21,16 +21,20 @@ function longest(strings) {
         }
     }
 }
+
 //// BEGIN - TEST
 const METADATA = {
     author: 'jt',
     dataset: 'test'
 };
 
+const assert = require('assert');
+
 function check(candidate) {
-    if (candidate([]) !== null) throw new Error('Test failed: expected null for empty array');
-    if (candidate(['x', 'y', 'z']) !== 'x') throw new Error("Test failed: expected 'x' for ['x','y','z']");
-    if (candidate(['x', 'yyy', 'zzzz', 'www', 'kkkk', 'abc']) !== 'zzzz') throw new Error("Test failed: expected 'zzzz' for mixed lengths");
+    assert.equal(candidate([]), null)
+    assert.equal(candidate(['x', 'y', 'z']), 'x')
+    assert.equal(candidate(['x', 'yyy', 'zzzz', 'www', 'kkkk', 'abc']), 'zzzz')
 }
+
 //// BEGIN - CHECK
 check(longest);

@@ -22,6 +22,7 @@ const METADATA = {
 };
 
 const assert = require('assert');
+
 function check(candidate) {
     assert.deepStrictEqual(candidate(''), []);
     assert.deepStrictEqual(candidate('asdfgh'), ['a', 'as', 'asd', 'asdf', 'asdfg', 'asdfgh']);

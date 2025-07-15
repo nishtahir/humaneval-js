@@ -1,12 +1,12 @@
 //// BEGIN - PROMPT
-//// BEGIN - CANONICAL SOLUTION
 /**
  * From a supplied array of numbers (length at least two) select and return two that are the closest to each
  * other and return them in order (smaller number, larger number).
  * @param {number[]} numbers
  * @returns {[number, number]}
- */
+*/
 function findClosestElements(numbers) {
+//// BEGIN - CANONICAL SOLUTION
     let closestPair = null;
     let distance = null;
     for (let i = 0; i < numbers.length; i++) {
@@ -26,11 +26,13 @@ function findClosestElements(numbers) {
 }
 
 //// BEGIN - TEST
-const assert = require('assert');
 const METADATA = {
     author: 'jt',
     dataset: 'test'
 };
+
+const assert = require('assert');
+
 function check(candidate) {
     assert.deepStrictEqual(candidate([1.0, 2.0, 3.9, 4.0, 5.0, 2.2]), [3.9, 4.0]);
     assert.deepStrictEqual(candidate([1.0, 2.0, 5.9, 4.0, 5.0]), [5.0, 5.9]);

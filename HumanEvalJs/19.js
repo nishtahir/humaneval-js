@@ -11,7 +11,7 @@
  * @returns {string}
  */
 function sortNumbers(numbers) {
-    //// BEGIN - CANONICAL SOLUTION
+//// BEGIN - CANONICAL SOLUTION
     const valueMap = {
         zero: 0,
         one: 1,
@@ -32,12 +32,12 @@ function sortNumbers(numbers) {
 }
 
 //// BEGIN - TEST
-const assert = require('assert');
-
 const METADATA = {
     author: 'jt',
     dataset: 'test'
 };
+
+const assert = require('assert');
 
 function check(candidate) {
     assert.strictEqual(candidate(''), '');

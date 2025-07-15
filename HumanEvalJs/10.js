@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * Test if given string is a palindrome
  * @param {string} string

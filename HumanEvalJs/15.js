@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * Return a string containing space-delimited numbers starting from 0 up to n inclusive.
  *
@@ -11,12 +10,9 @@
  * string_sequence(5); // '0 1 2 3 4 5'
  */
 function string_sequence(n) {
+//// BEGIN - CANONICAL SOLUTION
     return Array.from({ length: n + 1 }, (_, x) => x).join(' ');
 }
-
-//// BEGIN - CANONICAL SOLUTION
-
-// (Implementation is the same as above)
 
 //// BEGIN - TEST
 

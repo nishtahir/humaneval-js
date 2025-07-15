@@ -29,16 +29,12 @@ const METADATA = {
     dataset: 'test'
 };
 
+const assert = require('assert');
+
 function check(candidate) {
-    if (candidate('111000', '101010') !== '010010') {
-        throw new Error("Test failed for input ('111000','101010')");
-    }
-    if (candidate('1', '1') !== '0') {
-        throw new Error("Test failed for input ('1','1')");
-    }
-    if (candidate('0101', '0000') !== '0101') {
-        throw new Error("Test failed for input ('0101','0000')");
-    }
+    assert.equal(candidate('111000', '101010'), '010010')
+    assert.equal(candidate('1', '1'), '0')
+    assert.equal(candidate('0101', '0000'), '0101')
 }
 
 //// BEGIN - CHECK

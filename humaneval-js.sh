@@ -1,9 +1,6 @@
 #!/bin/bash
-# Directory containing Python scripts
-directory="HumanEval"
-
-# Loop through all Python files and execute them
-for f in "$directory"/*.py; do
+ directory="HumanEvalJs"
+for f in "$directory"/*.js; do
    echo "Running: $f"
-   python "$f"
+   node "$f"
 done

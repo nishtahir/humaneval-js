@@ -8,8 +8,8 @@
  * countDistinctCharacters('Jerry');  // 4
  */
 
-//// BEGIN - CANONICAL SOLUTION
 function countDistinctCharacters(str) {
+//// BEGIN - CANONICAL SOLUTION
     return new Set(str.toLowerCase()).size;
 }
 
