@@ -12,6 +12,7 @@
  * primeFib(5) // 89
  */
 function primeFib(n) {
+//// BEGIN - CANONICAL SOLUTION
     function isPrime(p) {
         if (p < 2) return false;
         const limit = Math.min(Math.floor(Math.sqrt(p)) + 1, p - 1);
@@ -32,11 +33,8 @@ function primeFib(n) {
     }
 }
 
-//// BEGIN - CANONICAL SOLUTION
-
-// (Implementation is above)
-
 //// BEGIN - TEST
+const METADATA = {}
 
 const assert = require('assert');
 
@@ -54,5 +52,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-
 check(primeFib);

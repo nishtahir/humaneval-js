@@ -3,14 +3,14 @@
  * Return the number of times the digit 7 appears in integers less than n which are divisible by 11 or 13.
  *
  * Examples:
- *   fizz_buzz(50) // 0
- *   fizz_buzz(78) // 2
- *   fizz_buzz(79) // 3
+ *   fizzBuzz(50) // 0
+ *   fizzBuzz(78) // 2
+ *   fizzBuzz(79) // 3
  *
  * @param {number} n
  * @returns {number}
  */
-function fizz_buzz(n) {
+function fizzBuzz(n) {
 //// BEGIN - CANONICAL SOLUTION
     const ns = [];
     for (let i = 0; i < n; i++) {
@@ -45,4 +45,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(fizz_buzz);
+check(fizzBuzz);

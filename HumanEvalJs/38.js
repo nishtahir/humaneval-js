@@ -29,6 +29,8 @@ function decodeCyclic(s) {
 }
 
 //// BEGIN - TEST
+const METADATA = {}
+
 const assert = require('assert');
 const letters = 'abcdefghijklmnopqrstuvwxyz';
 

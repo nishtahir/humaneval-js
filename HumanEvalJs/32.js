@@ -10,7 +10,6 @@ function poly(xs, x) {
     return xs.reduce((sum, coeff, i) => sum + coeff * Math.pow(x, i), 0);
 }
 
-//// BEGIN - CANONICAL SOLUTION
 /**
  * xs are coefficients of a polynomial.
  * findZero finds x such that poly(xs, x) = 0.
@@ -20,8 +19,9 @@ function poly(xs, x) {
  * a solution.
  * @param {number[]} xs
  * @returns {number}
- */
+*/
 function findZero(xs) {
+//// BEGIN - CANONICAL SOLUTION
     let begin = -1.0;
     let end = 1.0;
     while (poly(xs, begin) * poly(xs, end) > 0) {

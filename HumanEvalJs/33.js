@@ -1,6 +1,3 @@
-'use strict';
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * This function takes an array l and returns a new array l' such that
@@ -12,9 +9,9 @@ const assert = require('assert');
  * @example
  * sortThird([1, 2, 3]); // [1, 2, 3]
  * sortThird([5, 6, 3, 4, 8, 9, 2]); // [2, 6, 3, 4, 8, 9, 5]
- */
+*/
 function sortThird(l) {
-  BEGIN - CANONICAL SOLUTION
+//// BEGIN - CANONICAL SOLUTION
   const result = l.slice();
   const elems = [];
   for (let i = 0; i < result.length; i += 3) {
@@ -30,6 +27,7 @@ function sortThird(l) {
 
 //// BEGIN - TEST
 const METADATA = {};
+const assert = require('assert');
 
 function check(candidate) {
   assert.deepStrictEqual(candidate([1, 2, 3]), sortThird([1, 2, 3]));

@@ -12,8 +12,8 @@
  *   triplesSumToZero([1]); // false
  */
 
-//// BEGIN - CANONICAL SOLUTION
 function triplesSumToZero(l) {
+//// BEGIN - CANONICAL SOLUTION
     for (let i = 0; i < l.length; i++) {
         for (let j = i + 1; j < l.length; j++) {
             for (let k = j + 1; k < l.length; k++) {

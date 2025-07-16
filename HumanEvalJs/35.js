@@ -11,6 +11,7 @@
  * maxElement([5, 3, -5, 2, -3, 3, 9, 0, 123, 1, -10]);
  */
 function maxElement(l) {
+//// BEGIN - CANONICAL SOLUTION
     let m = l[0];
     for (const e of l) {
         if (e > m) {
@@ -21,6 +22,7 @@ function maxElement(l) {
 }
 
 //// BEGIN - TEST
+const METADATA = {}
 const assert = require('assert');
 
 function check(candidate) {
