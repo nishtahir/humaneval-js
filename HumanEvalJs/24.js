@@ -7,7 +7,7 @@
  * largestDivisor(15); // 5
  */
 function largestDivisor(n) {
-  BEGIN - CANONICAL SOLUTION
+//// BEGIN - CANONICAL SOLUTION
   for (let i = n - 1; i >= 1; i--) {
     if (n % i === 0) {
       return i;
@@ -21,7 +21,6 @@ const METADATA = {
   dataset: 'test'
 };
 
-//// BEGIN - CHECK
 const assert = require('assert');
 
 function check(candidate) {
@@ -32,4 +31,5 @@ function check(candidate) {
   assert.strictEqual(candidate(49), 7);
 }
 
+//// BEGIN - CHECK
 check(largestDivisor);

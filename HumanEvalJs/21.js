@@ -8,8 +8,8 @@
  * // returns [0.0, 0.25, 0.5, 0.75, 1.0]
  * rescaleToUnit([1.0, 2.0, 3.0, 4.0, 5.0]);
  */
-//// BEGIN - CANONICAL SOLUTION
 function rescaleToUnit(numbers) {
+//// BEGIN - CANONICAL SOLUTION
     const minNumber = Math.min(...numbers);
     const maxNumber = Math.max(...numbers);
     return numbers.map(x => (x - minNumber) / (maxNumber - minNumber));
@@ -21,13 +21,14 @@ const METADATA = {
     dataset: 'test'
 };
 
+const assert = require('assert');
+
 function check(candidate) {
-    const arrEquals = (a, b) => a.length === b.length && a.every((v, i) => v === b[i]);
-    if (!arrEquals(candidate([2.0, 49.9]), [0.0, 1.0])) throw new Error('Test failed');
-    if (!arrEquals(candidate([100.0, 49.9]), [1.0, 0.0])) throw new Error('Test failed');
-    if (!arrEquals(candidate([1.0, 2.0, 3.0, 4.0, 5.0]), [0.0, 0.25, 0.5, 0.75, 1.0])) throw new Error('Test failed');
-    if (!arrEquals(candidate([2.0, 1.0, 5.0, 3.0, 4.0]), [0.25, 0.0, 1.0, 0.5, 0.75])) throw new Error('Test failed');
-    if (!arrEquals(candidate([12.0, 11.0, 15.0, 13.0, 14.0]), [0.25, 0.0, 1.0, 0.5, 0.75])) throw new Error('Test failed');
+    assert.deepStrictEqual(candidate([2.0, 49.9]), [0.0, 1.0]);
+    assert.deepStrictEqual(candidate([100.0, 49.9]), [1.0, 0.0]);
+    assert.deepStrictEqual(candidate([1.0, 2.0, 3.0, 4.0, 5.0]), [0.0, 0.25, 0.5, 0.75, 1.0]);
+    assert.deepStrictEqual(candidate([2.0, 1.0, 5.0, 3.0, 4.0]), [0.25, 0.0, 1.0, 0.5, 0.75]);
+    assert.deepStrictEqual(candidate([12.0, 11.0, 15.0, 13.0, 14.0]), [0.25, 0.0, 1.0, 0.5, 0.75]);
 }
 
 //// BEGIN - CHECK

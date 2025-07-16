@@ -18,7 +18,9 @@ function concatenate(strings) {
 
 //// BEGIN - TEST
 const METADATA = { author: 'jt', dataset: 'test' };
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate([]), '');
     assert.strictEqual(candidate(['x', 'y', 'z']), 'xyz');

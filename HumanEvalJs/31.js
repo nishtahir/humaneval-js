@@ -1,6 +1,5 @@
 //// BEGIN - PROMPT
 
-//// BEGIN - CANONICAL SOLUTION
 
 /**
  * Return true if a given number is prime, and false otherwise.
@@ -14,8 +13,9 @@
  * isPrime(61); // true
  * isPrime(4); // false
  * isPrime(1); // false
- */
+*/
 function isPrime(n) {
+//// BEGIN - CANONICAL SOLUTION
     if (n < 2) {
         return false;
     }
@@ -49,5 +49,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-
 check(isPrime);

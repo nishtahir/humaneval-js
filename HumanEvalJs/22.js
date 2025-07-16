@@ -9,9 +9,9 @@
  * filter_integers(['a', 3.14, 5]); // returns [5]
  * @example
  * filter_integers([1, 2, 3, 'abc', {}, []]); // returns [1, 2, 3]
- */
-//// BEGIN - CANONICAL SOLUTION
+*/
 function filter_integers(values) {
+//// BEGIN - CANONICAL SOLUTION
     return values.filter(x => Number.isInteger(x));
 }
 

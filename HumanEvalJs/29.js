@@ -9,11 +9,9 @@
  * filterByPrefix(['abc', 'bcd', 'cde', 'array'], 'a'); // ['abc', 'array']
  */
 function filterByPrefix(strings, prefix) {
+//// BEGIN - CANONICAL SOLUTION
     return strings.filter(x => x.startsWith(prefix));
 }
-
-//// BEGIN - CANONICAL SOLUTION
-// Same as above
 
 //// BEGIN - TEST
 const METADATA = {
@@ -21,17 +19,12 @@ const METADATA = {
     dataset: 'test'
 };
 
+const assert = require('assert');
+
 function check(candidate) {
-    if (JSON.stringify(candidate([], 'john')) !== JSON.stringify([])) {
-        throw new Error('Test failed: expected [] for empty input');
-    }
-    const result = candidate(['xxx', 'asd', 'xxy', 'john doe', 'xxxAAA', 'xxx'], 'xxx');
-    if (JSON.stringify(result) !== JSON.stringify(['xxx', 'xxxAAA', 'xxx'])) {
-        throw new Error('Test failed: unexpected result for prefix "xxx"');
-    }
+    assert.deepStrictEqual(candidate([], 'john'), [])
+    assert.deepStrictEqual(candidate(['xxx', 'asd', 'xxy', 'john doe', 'xxxAAA', 'xxx'], 'xxx'), ['xxx', 'xxxAAA', 'xxx'])
 }
 
 //// BEGIN - CHECK
 check(filterByPrefix);
-
-module.exports = { filterByPrefix };
