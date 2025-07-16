@@ -1,21 +1,19 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * Checks if given string is a palindrome
  * @param {string} text
  * @returns {boolean}
  * @example
- * is_palindrome('');
+ * isPalindrome('');
  * // returns true
- * is_palindrome('aba');
+ * isPalindrome('aba');
  * // returns true
- * is_palindrome('aaaaa');
+ * isPalindrome('aaaaa');
  * // returns true
- * is_palindrome('zbcd');
+ * isPalindrome('zbcd');
  * // returns false
  */
-function is_palindrome(text) {
+function isPalindrome(text) {
 //// BEGIN - CANONICAL SOLUTION
     for (let i = 0; i < text.length; i++) {
         if (text[i] !== text[text.length - 1 - i]) {
@@ -27,6 +25,7 @@ function is_palindrome(text) {
 
 //// BEGIN - TEST
 const METADATA = {};
+const assert = require('assert');
 
 function check(candidate) {
     assert.strictEqual(candidate(''), true);
@@ -39,4 +38,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(is_palindrome);
+check(isPalindrome);

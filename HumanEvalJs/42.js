@@ -10,25 +10,20 @@
  * @param {number[]} l
  * @returns {number[]}
  */
-function incr_list(l) {
+function incrList(l) {
 //// BEGIN - CANONICAL SOLUTION
     return l.map(e => e + 1);
 }
 
 //// BEGIN - TEST
 const METADATA = {};
+const assert = require("assert")
 
 function check(candidate) {
-    if (JSON.stringify(candidate([])) !== JSON.stringify([])) {
-        throw new Error('Test failed: []');
-    }
-    if (JSON.stringify(candidate([3, 2, 1])) !== JSON.stringify([4, 3, 2])) {
-        throw new Error('Test failed: [3,2,1]');
-    }
-    if (JSON.stringify(candidate([5, 2, 5, 2, 3, 3, 9, 0, 123])) !== JSON.stringify([6, 3, 6, 3, 4, 4, 10, 1, 124])) {
-        throw new Error('Test failed: long list');
-    }
+    assert.deepStrictEqual(candidate([]), [])
+    assert.deepStrictEqual(candidate([3, 2, 1]), [4, 3, 2])
+    assert.deepStrictEqual(candidate([5, 2, 5, 2, 3, 3, 9, 0, 123]), [6, 3, 6, 3, 4, 4, 10, 1, 124])
 }
 
 //// BEGIN - CHECK
-check(incr_list);
+check(incrList);

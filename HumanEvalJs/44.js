@@ -7,11 +7,11 @@
  * @param {number} base - the base to convert to (less than 10).
  * @returns {string} the string representation of x in the given base.
  * @example
- * change_base(8, 3); // '22'
- * change_base(8, 2); // '1000'
- * change_base(7, 2); // '111'
+ * changeBase(8, 3); // '22'
+ * changeBase(8, 2); // '1000'
+ * changeBase(7, 2); // '111'
  */
-function change_base(x, base) {
+function changeBase(x, base) {
 //// BEGIN - CANONICAL SOLUTION
     let ret = "";
     while (x > 0) {
@@ -38,4 +38,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(change_base);
+check(changeBase);

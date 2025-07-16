@@ -14,9 +14,9 @@ function triangle_area(a, h) {
 
 //// BEGIN - TEST
 const METADATA = {};
+const assert = require('assert');
 
 function check(candidate) {
-    const assert = require('assert');
     assert.strictEqual(candidate(5, 3), 7.5);
     assert.strictEqual(candidate(2, 2), 2.0);
     assert.strictEqual(candidate(10, 8), 40.0);

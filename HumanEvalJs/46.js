@@ -14,13 +14,13 @@
  *   fib4(7) -> 14
  */
 
-//// BEGIN - CANONICAL SOLUTION
 /**
  * Computes the n-th element of the fib4 number sequence.
  * @param {number} n
  * @returns {number}
- */
+*/
 function fib4(n) {
+//// BEGIN - CANONICAL SOLUTION
     const results = [0, 0, 2, 0];
     if (n < 4) {
         return results[n];

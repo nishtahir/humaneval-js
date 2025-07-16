@@ -12,7 +12,7 @@
  * @param {number} n - number of cars in each set
  * @returns {number} number of collisions
  */
-function car_race_collision(n) {
+function carRaceCollision(n) {
 //// BEGIN - CANONICAL SOLUTION
     return n * n;
 }
@@ -31,5 +31,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-
-check(car_race_collision);
+check(carRaceCollision);

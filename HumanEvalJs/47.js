@@ -11,7 +11,7 @@
  * 15.0
  */
 function median(l) {
-    // Canonical solution
+//// BEGIN - CANONICAL SOLUTION
     const sorted = [...l].sort((a, b) => a - b);
     const n = sorted.length;
     if (n % 2 === 1) {
@@ -23,13 +23,14 @@ function median(l) {
 
 //// BEGIN - TEST
 const METADATA = {};
+const assert = require('assert');
 
 function check(candidate) {
-    if (candidate([3, 1, 2, 4, 5]) !== 3) throw new Error('Test 1 failed');
-    if (candidate([-10, 4, 6, 1000, 10, 20]) !== 8.0) throw new Error('Test 2 failed');
-    if (candidate([5]) !== 5) throw new Error('Test 3 failed');
-    if (candidate([6, 5]) !== 5.5) throw new Error('Test 4 failed');
-    if (candidate([8, 1, 3, 9, 9, 2, 7]) !== 7) throw new Error('Test 5 failed');
+    assert.strictEqual(candidate([3, 1, 2, 4, 5]), 3);
+    assert.strictEqual(candidate([-10, 4, 6, 1000, 10, 20]), 8.0);
+    assert.strictEqual(candidate([5]), 5);
+    assert.strictEqual(candidate([6, 5]), 5.5);
+    assert.strictEqual(candidate([8, 1, 3, 9, 9, 2, 7]), 7);
 }
 
 //// BEGIN - CHECK

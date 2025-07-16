@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * returns encoded string by shifting every character by 5 in the alphabet.
  * @param {string} s
@@ -30,6 +29,7 @@ function decodeShift(s) {
 //// BEGIN - TEST
 
 const METADATA = {};
+const assert = require('assert');
 
 function check(candidate) {
     const letters = 'abcdefghijklmnopqrstuvwxyz';
@@ -40,9 +40,7 @@ function check(candidate) {
             str += letters.charAt(Math.floor(Math.random() * letters.length));
         }
         const encodedStr = encodeShift(str);
-        if (candidate(encodedStr) !== str) {
-            throw new Error(`Test failed: expected ${str}, got ${candidate(encodedStr)}`);
-        }
+        assert.strictEqual(candidate(encodedStr), str);
     }
 }
 
