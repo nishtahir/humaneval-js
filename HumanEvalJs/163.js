@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * Given two positive integers a and b, return the even digits between a
  * and b, in ascending order.
@@ -23,7 +22,13 @@ function generateIntegers(a, b) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate(2, 10), [2, 4, 6, 8], 'Test 1');

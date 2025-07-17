@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * Given a positive integer, obtain its roman numeral equivalent as a string,
@@ -29,6 +27,14 @@ function int_to_mini_roman(number) {
     }
     return res.toLowerCase();
 }
+
+//// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
 
 //// BEGIN - TEST
 function check(candidate) {

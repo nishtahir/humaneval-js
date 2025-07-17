@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * A simple program which should return the value of x if n is
@@ -15,7 +13,7 @@ const assert = require('assert');
  * @returns {*}
  */
 function x_or_y(n, x, y) {
-  BEGIN - CANONICAL SOLUTION
+//// BEGIN - CANONICAL SOLUTION
   if (n === 1) {
     return y;
   }
@@ -28,6 +26,13 @@ function x_or_y(n, x, y) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
   // Check some simple cases
   assert.strictEqual(candidate(7, 34, 12), 34);
