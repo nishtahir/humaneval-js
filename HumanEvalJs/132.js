@@ -18,6 +18,7 @@
  * @returns {boolean}
  */
 function is_nested(string) {
+//// BEGIN - CANONICAL SOLUTION
     const openingBracketIndex = [];
     const closingBracketIndex = [];
     for (let i = 0; i < string.length; i++) {
@@ -39,8 +40,15 @@ function is_nested(string) {
     }
     return cnt >= 2;
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate('[[]]'), true, 'This prints if this assert fails 1 (good for debugging!)');
@@ -60,5 +68,6 @@ function check(candidate) {
     assert.strictEqual(candidate('[[[[[[[['), false);
     assert.strictEqual(candidate(']]]]]]]]'), false);
 }
+
 //// BEGIN - CHECK
 check(is_nested);

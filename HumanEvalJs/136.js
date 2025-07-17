@@ -11,6 +11,7 @@
  * largestSmallestIntegers([0]) // [null, null]
  */
 function largestSmallestIntegers(lst) {
+//// BEGIN - CANONICAL SOLUTION
     const negatives = lst.filter(x => x < 0);
     const positives = lst.filter(x => x > 0);
     const a = negatives.length ? Math.max(...negatives) : null;
@@ -18,11 +19,14 @@ function largestSmallestIntegers(lst) {
     return [a, b];
 }
 
-//// BEGIN - CANONICAL SOLUTION
-// (See implementation above)
-
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate([2, 4, 1, 3, 5, 7]), [null, 1]);

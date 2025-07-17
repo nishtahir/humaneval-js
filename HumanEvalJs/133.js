@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * You are given a list of numbers.
  * You need to return the sum of squared numbers in the given list,
@@ -15,6 +14,7 @@
  * @returns {number} sum of squares of the ceiling of each element
  */
 function sumSquares(lst) {
+//// BEGIN - CANONICAL SOLUTION
     let squared = 0;
     for (const i of lst) {
         squared += Math.ceil(i) ** 2;
@@ -23,6 +23,10 @@ function sumSquares(lst) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
 
 const assert = require('assert');
 
@@ -46,5 +50,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-
 check(sumSquares)

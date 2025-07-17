@@ -11,15 +11,22 @@
  *   checkIfLastCharIsALetter("apple pi e "); // false
  *   checkIfLastCharIsALetter(""); // false
  */
-//// BEGIN - CANONICAL SOLUTION
 function checkIfLastCharIsALetter(txt) {
+//// BEGIN - CANONICAL SOLUTION
     const parts = txt.split(' ');
     const last = parts[parts.length - 1];
     return last.length === 1 && (last.toLowerCase().charCodeAt(0) >= 97 && last.toLowerCase().charCodeAt(0) <= 122);
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
-    const assert = require('assert');
     assert.strictEqual(candidate("apple"), false);
     assert.strictEqual(candidate("apple pi e"), true);
     assert.strictEqual(candidate("eeeee"), false);
@@ -31,5 +38,6 @@ function check(candidate) {
     assert.strictEqual(candidate("apple pie"), false);
     assert.strictEqual(candidate("apple pi e "), false);
 }
+
 //// BEGIN - CHECK
 check(checkIfLastCharIsALetter);

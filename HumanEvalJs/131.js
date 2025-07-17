@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * Given a positive integer n, return the product of the odd digits.
@@ -13,8 +11,8 @@ const assert = require('assert');
  * @param {number} n
  * @returns {number}
  */
-//// BEGIN - CANONICAL SOLUTION
 function digits(n) {
+//// BEGIN - CANONICAL SOLUTION
     let product = 1;
     let oddCount = 0;
     for (const char of n.toString()) {
@@ -28,6 +26,13 @@ function digits(n) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate(5), 5);
