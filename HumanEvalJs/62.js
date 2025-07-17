@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * xs represent coefficients of a polynomial.
  * xs[0] + xs[1] * x + xs[2] * x^2 + ....
@@ -16,7 +15,6 @@ function derivative(xs) {
 }
 
 //// BEGIN - TEST
-
 const assert = require('assert');
 const METADATA = {};
 
@@ -29,5 +27,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-
 check(derivative);

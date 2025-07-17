@@ -22,6 +22,8 @@ function circularShift(x, shift) {
 
 //// BEGIN - TEST
 const assert = require('assert');
+const METADATA = {};
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate(100, 2), "001");

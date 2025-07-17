@@ -12,14 +12,8 @@
  *     digitSum("woArBld") => 131
  *     digitSum("aAaaaXa") => 153
  */
-
-//// BEGIN - CANONICAL SOLUTION
-/**
- * Calculates the sum of ASCII codes of uppercase characters in a string.
- * @param {string} s - Input string.
- * @returns {number} Sum of ASCII codes of uppercase letters.
- */
 function digitSum(s) {
+//// BEGIN - CANONICAL SOLUTION
     if (s === "") return 0;
     let sum = 0;
     for (const char of s) {

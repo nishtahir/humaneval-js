@@ -8,9 +8,6 @@
  *   search([4, 1, 2, 2, 3, 1]) == 2
  *   search([1, 2, 2, 3, 3, 3, 4, 4, 4]) == 3
  *   search([5, 5, 4, 4, 4]) == -1
- *
- * @param {number[]} lst
- * @returns {number}
  */
 function search(lst) {
 //// BEGIN - CANONICAL SOLUTION

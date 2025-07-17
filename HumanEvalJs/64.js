@@ -4,18 +4,18 @@ Add more test cases.
 `;
 
 /**
- * Write a function vowels_count which takes a string representing
+ * Write a function vowelsCount which takes a string representing
  * a word as input and returns the number of vowels in the string.
  * Vowels in this case are 'a', 'e', 'i', 'o', 'u'. Here, 'y' is also a
  * vowel, but only when it is at the end of the given word.
  *
  * Example:
- * >>> vowels_count("abcde")
+ * >>> vowelsCount("abcde")
  * 2
- * >>> vowels_count("ACEDY")
+ * >>> vowelsCount("ACEDY")
  * 3
  */
-function vowels_count(s) {
+function vowelsCount(s) {
 //// BEGIN - CANONICAL SOLUTION
   const vowels = 'aeiouAEIOU';
   let n_vowels = 0;
@@ -33,6 +33,9 @@ function vowels_count(s) {
 
 //// BEGIN - TEST
 const assert = require('assert');
+const METADATA = {};
+
+
 function check(candidate) {
   // Check some simple cases
   assert.strictEqual(candidate("abcde"), 2, "Test 1");
@@ -48,4 +51,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(vowels_count);
+check(vowelsCount);

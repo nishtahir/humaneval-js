@@ -8,11 +8,9 @@
  * strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]
  * strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]
  * strange_sort_list([]) == []
- *
- * @param {number[]} lst - list of integers
- * @returns {number[]} list in strange sorted order
  */
 function strange_sort_list(lst) {
+//// BEGIN - CANONICAL SOLUTION
     const res = [];
     let toggle = true;
     const arr = lst.slice();

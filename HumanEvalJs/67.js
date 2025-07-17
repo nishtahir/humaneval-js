@@ -11,13 +11,9 @@
  * fruit_distribution("2 apples and 3 oranges", 100) -> 100 - 2 - 3 = 95
  * fruit_distribution("100 apples and 1 oranges", 120) -> 120 - 100 - 1 = 19
  *
- * @param {string} s - String describing number of apples and oranges.
- * @param {number} n - Total number of fruits in the basket.
- * @returns {number} Number of mango fruits in the basket.
  */
-
-//// BEGIN - CANONICAL SOLUTION
 function fruit_distribution(s, n) {
+//// BEGIN - CANONICAL SOLUTION
     const lis = [];
     s.split(' ').forEach(i => {
         if (/^\d+$/.test(i)) {
@@ -29,6 +25,8 @@ function fruit_distribution(s, n) {
 
 //// BEGIN - TEST
 const assert = require('assert');
+const METADATA = {};
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate("5 apples and 6 oranges", 19), 8);

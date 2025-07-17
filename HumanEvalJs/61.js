@@ -29,7 +29,9 @@ function correctBracketing(brackets) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
     assert(candidate("()"));
     assert(candidate("(()())"));
