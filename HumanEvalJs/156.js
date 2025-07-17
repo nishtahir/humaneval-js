@@ -36,7 +36,6 @@ const METADATA = {
 
 const assert = require('assert');
 
-//// BEGIN - TEST
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate(19), 'xix');

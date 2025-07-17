@@ -13,8 +13,8 @@
  * @param {number[]} lst
  * @returns {number}
  */
-//// BEGIN - CANONICAL SOLUTION
 function double_the_difference(lst) {
+//// BEGIN - CANONICAL SOLUTION
     return lst
         .filter(i => Number.isInteger(i) && i > 0 && i % 2 !== 0)
         .reduce((sum, i) => sum + i * i, 0);
