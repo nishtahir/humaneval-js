@@ -42,6 +42,13 @@ function fixSpaces(text) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     const assert = require('assert');
     assert.strictEqual(candidate("Example"), "Example", "This prints if this assert fails 1 (good for debugging!)");

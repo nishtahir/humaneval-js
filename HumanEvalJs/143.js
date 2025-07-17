@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * You are given a string representing a sentence,
@@ -21,8 +19,8 @@ const assert = require('assert');
  *     * sentence contains only letters
  */
 
-//// BEGIN - CANONICAL SOLUTION
 function wordsInSentence(sentence) {
+//// BEGIN - CANONICAL SOLUTION
     const words = sentence.split(' ');
     const result = [];
 
@@ -50,6 +48,13 @@ function wordsInSentence(sentence) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate("This is a test"), "is");
     assert.strictEqual(candidate("lets go for swimming"), "go for");

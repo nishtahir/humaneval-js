@@ -30,13 +30,21 @@ function get_max_triples(n) {
     }
     return count;
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate(5), 1);
     assert.strictEqual(candidate(6), 4);
     assert.strictEqual(candidate(10), 36);
     assert.strictEqual(candidate(100), 53361);
 }
+
 //// BEGIN - CHECK
 check(get_max_triples);
