@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * Write a function that accepts an array of strings as a parameter,
@@ -14,8 +12,8 @@ const assert = require('assert');
  * sorted_list_sum(["aa", "a", "aaa"]) => ["aa"]
  * sorted_list_sum(["ab", "a", "aaa", "cd"]) => ["ab", "cd"]
  */
-//// BEGIN - CANONICAL SOLUTION
 function sorted_list_sum(lst) {
+//// BEGIN - CANONICAL SOLUTION
     lst.sort();
     const new_lst = [];
     for (const i of lst) {
@@ -30,7 +28,15 @@ function sorted_list_sum(lst) {
         return a.localeCompare(b);
     });
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate(["aa", "a", "aaa"]), ["aa"]);
@@ -43,5 +49,6 @@ function check(candidate) {
     assert.deepStrictEqual(candidate(["a", "b", "b", "c", "c", "a"]), []);
     assert.deepStrictEqual(candidate(["aaaa", "bbbb", "dd", "cc"]), ["cc", "dd", "aaaa", "bbbb"]);
 }
+
 //// BEGIN - CHECK
 check(sorted_list_sum);

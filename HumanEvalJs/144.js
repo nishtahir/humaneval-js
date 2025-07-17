@@ -16,8 +16,8 @@
  * @param {string} n - Fraction in the format "numerator/denominator"
  * @returns {boolean} - True if x * n is a whole number, false otherwise
  */
-//// BEGIN - CANONICAL SOLUTION
 function simplify(x, n) {
+//// BEGIN - CANONICAL SOLUTION
     const [a, b] = x.split("/");
     const [c, d] = n.split("/");
     const numerator = parseInt(a, 10) * parseInt(c, 10);
@@ -25,7 +25,13 @@ function simplify(x, n) {
     return numerator % denom === 0;
 }
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate("1/5", "5/1"), true, 'test1');
     assert.strictEqual(candidate("1/6", "2/1"), false, 'test2');
@@ -41,5 +47,6 @@ function check(candidate) {
     assert.strictEqual(candidate("1/5", "5/1"), true, 'test12');
     assert.strictEqual(candidate("1/5", "1/5"), false, 'test13');
 }
+
 //// BEGIN - CHECK
 check(simplify)

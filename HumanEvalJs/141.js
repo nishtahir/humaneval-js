@@ -13,8 +13,8 @@
  * @param {string} file_name
  * @returns {'Yes'|'No'}
  */
-//// BEGIN - CANONICAL SOLUTION
 function file_name_check(file_name) {
+//// BEGIN - CANONICAL SOLUTION
     const suf = ['txt', 'exe', 'dll'];
     const parts = file_name.split('.');
     if (parts.length !== 2) {
@@ -36,8 +36,15 @@ function file_name_check(file_name) {
     }
     return 'Yes';
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate("example.txt"), 'Yes');
     assert.strictEqual(candidate("1example.dll"), 'No');
@@ -66,5 +73,6 @@ function check(candidate) {
     assert.strictEqual(candidate('.txt'), 'No');
     assert.strictEqual(candidate('s.'), 'No');
 }
+
 //// BEGIN - CHECK
 check(file_name_check);

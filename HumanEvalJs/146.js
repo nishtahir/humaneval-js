@@ -7,12 +7,12 @@
  * specialFilter([15, -73, 14, -15]) => 1 
  * specialFilter([33, -2, -3, 45, 21, 109]) => 2
  */
-//// BEGIN - CANONICAL SOLUTION
 /**
  * @param {number[]} nums
  * @returns {number}
  */
 function specialFilter(nums) {
+//// BEGIN - CANONICAL SOLUTION
     let count = 0;
     const oddDigits = new Set([1, 3, 5, 7, 9]);
     for (const num of nums) {
@@ -27,8 +27,15 @@ function specialFilter(nums) {
     }
     return count;
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate([5, -2, 1, -5]), 0);
@@ -41,5 +48,6 @@ function check(candidate) {
     assert.strictEqual(candidate([1]), 0);
     assert.strictEqual(candidate([]), 0);
 }
+
 //// BEGIN - CHECK
 check(specialFilter);

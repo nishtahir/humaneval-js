@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * There are eight planets in our solar system: the closest to the Sun is Mercury,
@@ -33,10 +31,16 @@ function bf(planet1, planet2) {
     } else {
         return planetNames.slice(index2 + 1, index1);
     }
-    //// END - CANONICAL SOLUTION
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate("Jupiter", "Neptune"), ["Saturn", "Uranus"], "First test error: " + JSON.stringify(candidate("Jupiter", "Neptune")));
@@ -49,5 +53,6 @@ function check(candidate) {
     assert.deepStrictEqual(candidate("Mars", "Earth"), [], "Edge case Mars-Earth failed");
     assert.deepStrictEqual(candidate("Jupiter", "Makemake"), [], "Edge case invalid planet failed");
 }
+
 //// BEGIN - CHECK
 check(bf);
