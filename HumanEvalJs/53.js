@@ -16,7 +16,6 @@ function add(x, y) {
 
 //// BEGIN - TEST
 const METADATA = {};
-
 const assert = require('assert');
 
 function check(candidate) {

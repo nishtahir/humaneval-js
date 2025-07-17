@@ -11,6 +11,7 @@
  * @returns {number}
  */
 function largestPrimeFactor(n) {
+//// BEGIN - CANONICAL SOLUTION
     /**
      * Check if k is a prime number.
      * @param {number} k

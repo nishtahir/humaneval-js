@@ -31,29 +31,16 @@ function sameChars(s0, s1) {
 
 //// BEGIN - TEST
 const METADATA = {};
+const assert = require('assert');
 
 function check(candidate) {
-    if (candidate('eabcdzzzz', 'dddzzzzzzzddeddabc') !== true) {
-        throw new Error("Test failed: sameChars('eabcdzzzz', 'dddzzzzzzzddeddabc') should return true");
-    }
-    if (candidate('abcd', 'dddddddabc') !== true) {
-        throw new Error("Test failed: sameChars('abcd', 'dddddddabc') should return true");
-    }
-    if (candidate('dddddddabc', 'abcd') !== true) {
-        throw new Error("Test failed: sameChars('dddddddabc', 'abcd') should return true");
-    }
-    if (candidate('eabcd', 'dddddddabc') !== false) {
-        throw new Error("Test failed: sameChars('eabcd', 'dddddddabc') should return false");
-    }
-    if (candidate('abcd', 'dddddddabcf') !== false) {
-        throw new Error("Test failed: sameChars('abcd', 'dddddddabcf') should return false");
-    }
-    if (candidate('eabcdzzzz', 'dddzzzzzzzddddabc') !== false) {
-        throw new Error("Test failed: sameChars('eabcdzzzz', 'dddzzzzzzzddddabc') should return false");
-    }
-    if (candidate('aabb', 'aaccc') !== false) {
-        throw new Error("Test failed: sameChars('aabb', 'aaccc') should return false");
-    }
+    assert.strictEqual(candidate('eabcdzzzz', 'dddzzzzzzzddeddabc'), true);
+    assert.strictEqual(candidate('abcd', 'dddddddabc'), true);
+    assert.strictEqual(candidate('dddddddabc', 'abcd'), true);
+    assert.strictEqual(candidate('eabcd', 'dddddddabc'), false);
+    assert.strictEqual(candidate('abcd', 'dddddddabcf'), false);
+    assert.strictEqual(candidate('eabcdzzzz', 'dddzzzzzzzddddabc'), false);
+    assert.strictEqual(candidate('aabb', 'aaccc'), false);
 }
 
 //// BEGIN - CHECK

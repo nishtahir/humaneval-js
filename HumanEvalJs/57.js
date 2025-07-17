@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * Return true if array elements are monotonically increasing or decreasing.
  * @param {number[]} arr
@@ -16,7 +15,7 @@ function monotonic(arr) {
 }
 
 //// BEGIN - TEST
-
+const METADATA = {};
 const assert = require('assert');
 
 function check(candidate) {

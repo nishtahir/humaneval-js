@@ -12,7 +12,7 @@
  * sum_to_n(10); // 55
  * sum_to_n(1); // 1
  */
-function sum_to_n(n) {
+function sumToN(n) {
 //// BEGIN - CANONICAL SOLUTION
     let sum = 0;
     for (let i = 1; i <= n; i++) {
@@ -33,4 +33,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(sum_to_n);
+check(sumToN);

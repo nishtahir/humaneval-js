@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * brackets is a string of "<" and ">".
  * Returns true if every opening bracket has a corresponding closing bracket.
@@ -8,12 +7,12 @@
  * @returns {boolean}
  *
  * @example
- * correct_bracketing("<") // false
- * correct_bracketing("<>") // true
- * correct_bracketing("<<><>>") // true
- * correct_bracketing("><<>") // false
+ * correctBracketing("<") // false
+ * correctBracketing("<>") // true
+ * correctBracketing("<<><>>") // true
+ * correctBracketing("><<>") // false
  */
-function correct_bracketing(brackets) {
+function correctBracketing(brackets) {
 //// BEGIN - CANONICAL SOLUTION
     let depth = 0;
     for (const b of brackets) {
@@ -30,27 +29,24 @@ function correct_bracketing(brackets) {
 }
 
 //// BEGIN - TEST
-
 const METADATA = {};
+const assert = require('assert');
 
 function check(candidate) {
-    function assert(condition) {
-        if (!condition) throw new Error('Assertion failed');
-    }
-    assert(candidate("<>"));
-    assert(candidate("<<><>>"));
-    assert(candidate("<><><<><>><>"));
-    assert(candidate("<><><<<><><>><>><<><><<>>>"));
-    assert(!candidate("<<<><>>>>"));
-    assert(!candidate("><<>"));
-    assert(!candidate("<"));
-    assert(!candidate("<<<<"));
-    assert(!candidate(">"));
-    assert(!candidate("<<>"));
-    assert(!candidate("<><><<><>><>><<>"));
-    assert(!candidate("<><><<><>><>>><>"));
+    assert.ok(candidate("<>"));
+    assert.ok(candidate("<<><>>"));
+    assert.ok(candidate("<><><<><>><>"));
+    assert.ok(candidate("<><><<<><><>><>><<><><<>>>"));
+    assert.ok(!candidate("<<<><>>>>"));
+    assert.ok(!candidate("><<>"));
+    assert.ok(!candidate("<"));
+    assert.ok(!candidate("<<<<"));
+    assert.ok(!candidate(">"));
+    assert.ok(!candidate("<<>"));
+    assert.ok(!candidate("<><><<><>><>><<>"));
+    assert.ok(!candidate("<><><<><>><>>><>"));
 }
 
 //// BEGIN - CHECK
 
-check(correct_bracketing);
+check(correctBracketing);

@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * Return true if all numbers in the list l are below threshold t.
@@ -9,7 +7,7 @@ const assert = require('assert');
  * @example
  * belowThreshold([1, 2, 4, 10], 100); // true
  * belowThreshold([1, 20, 4, 10], 5); // false
- */
+*/
 function belowThreshold(l, t) {
 //// BEGIN - CANONICAL SOLUTION
     for (const e of l) {
@@ -21,7 +19,7 @@ function belowThreshold(l, t) {
 }
 
 //// BEGIN - TEST
-
+const assert = require('assert');
 const METADATA = {};
 
 function check(candidate) {

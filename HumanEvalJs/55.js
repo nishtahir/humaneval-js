@@ -20,15 +20,16 @@ function fib(n) {
     return fib(n - 1) + fib(n - 2);
 }
 //// BEGIN - TEST
-
 const METADATA = {};
+const assert = require('assert');
 
 function check(candidate) {
-    console.assert(candidate(10) === 55);
-    console.assert(candidate(1) === 1);
-    console.assert(candidate(8) === 21);
-    console.assert(candidate(11) === 89);
-    console.assert(candidate(12) === 144);
+    assert.ok(candidate(10) === 55);
+    assert.ok(candidate(1) === 1);
+    assert.ok(candidate(8) === 21);
+    assert.ok(candidate(11) === 89);
+    assert.ok(candidate(12) === 144);
 }
+
 //// BEGIN - CHECK
 check(fib);
