@@ -22,6 +22,11 @@ function compare(game, guess) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
 
 function check(candidate) {

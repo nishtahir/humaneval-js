@@ -23,7 +23,13 @@ function cycpattern_check(a, b) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate("xyzw","xyw"), false, "test #0");
     assert.strictEqual(candidate("yello","ell"), true, "test #1");

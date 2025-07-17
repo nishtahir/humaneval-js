@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * Write a function that accepts a list of strings.
@@ -22,6 +20,13 @@ function find_max(words) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert(candidate(["name", "of", "string"]) === "string", "t1");

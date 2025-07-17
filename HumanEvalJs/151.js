@@ -13,14 +13,21 @@
  * @param {number[]} lst
  * @returns {number}
  */
-//// BEGIN - CANONICAL SOLUTION
 function double_the_difference(lst) {
+//// BEGIN - CANONICAL SOLUTION
     return lst
         .filter(i => Number.isInteger(i) && i > 0 && i % 2 !== 0)
         .reduce((sum, i) => sum + i * i, 0);
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate([]), 0, "This prints if this assert fails 1 (good for debugging!)");
     assert.strictEqual(candidate([5, 4]), 25, "This prints if this assert fails 2 (good for debugging!)");
@@ -37,5 +44,6 @@ function check(candidate) {
         .reduce((s, i) => s + i * i, 0);
     assert.strictEqual(candidate(lst), odd_sum, "This prints if this assert fails 7 (good for debugging!)");
 }
+
 //// BEGIN - CHECK
 check(double_the_difference);

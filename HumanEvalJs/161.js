@@ -12,8 +12,8 @@
  * @param {string} s
  * @returns {string}
  */
-//// BEGIN - CANONICAL SOLUTION
 function solve(s) {
+//// BEGIN - CANONICAL SOLUTION
     let flg = 0;
     const newStr = s.split('');
     for (let idx = 0; idx < s.length; idx++) {
@@ -29,8 +29,15 @@ function solve(s) {
     }
     return result;
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate("AsDf"), "aSdF");
@@ -43,5 +50,6 @@ function check(candidate) {
     assert.strictEqual(candidate("#$a^D"), "#$A^d");
     assert.strictEqual(candidate("#ccc"), "#CCC");
 }
+
 //// BEGIN - CHECK
 check(solve);

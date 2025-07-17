@@ -1,5 +1,5 @@
-const crypto = require('crypto');
 //// BEGIN - PROMPT
+const crypto = require('crypto');
 /**
  * Given a string 'text', return its md5 hash equivalent string.
  * If 'text' is an empty string, return null.
@@ -14,7 +14,13 @@ function stringToMd5(text) {
   }
   return crypto.createHash('md5').update(text, 'ascii').digest('hex');
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
 
 function check(candidate) {
@@ -26,5 +32,6 @@ function check(candidate) {
   // Check some edge cases that are easy to work out by hand.
   assert.ok(true);
 }
+
 //// BEGIN - CHECK
 check(stringToMd5);

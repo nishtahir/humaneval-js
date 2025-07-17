@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * You will be given the name of a class (a string) and a list of extensions.
@@ -36,6 +34,13 @@ function Strongest_Extension(className, extensions) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate('Watashi', ['tEN', 'niNE', 'eIGHt8OKe']), 'Watashi.eIGHt8OKe');

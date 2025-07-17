@@ -25,8 +25,8 @@
  * @param {number[]} operand - array of non-negative integers
  * @returns {number} evaluation of built expression
  */
-//// BEGIN - CANONICAL SOLUTION
 function do_algebra(operator, operand) {
+//// BEGIN - CANONICAL SOLUTION
     const ops = operator.slice();
     const vals = operand.slice();
 
@@ -61,7 +61,13 @@ function do_algebra(operator, operand) {
     return vals[0];
 }
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate(['**', '*', '+'], [2, 3, 4, 5]), 37);
     assert.strictEqual(candidate(['+', '*', '-'], [2, 3, 4, 5]), 9);
