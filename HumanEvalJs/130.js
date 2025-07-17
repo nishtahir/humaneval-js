@@ -16,8 +16,8 @@
  * Examples:
  * tri(3) = [1, 3, 2, 8]
  */
-//// BEGIN - CANONICAL SOLUTION
 function tri(n) {
+//// BEGIN - CANONICAL SOLUTION
     if (n === 0) {
         return [1];
     }
@@ -31,8 +31,15 @@ function tri(n) {
     }
     return myTri;
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate(3), [1, 3, 2, 8]);
@@ -47,5 +54,6 @@ function check(candidate) {
     assert.deepStrictEqual(candidate(0), [1]);
     assert.deepStrictEqual(candidate(1), [1, 3]);
 }
+
 //// BEGIN - CHECK
 check(tri);

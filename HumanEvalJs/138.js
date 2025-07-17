@@ -12,8 +12,14 @@ function is_equal_to_sum_even(n) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
-    const assert = require('assert');
     assert.strictEqual(candidate(4), false);
     assert.strictEqual(candidate(6), false);
     assert.strictEqual(candidate(8), true);

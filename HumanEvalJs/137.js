@@ -10,8 +10,8 @@
  * compare_one("5,1", "6") ➞ "6"
  * compare_one("1", 1) ➞ null
  */
-//// BEGIN - CANONICAL SOLUTION
 function compare_one(a, b) {
+//// BEGIN - CANONICAL SOLUTION
     let tempA = a;
     let tempB = b;
     if (typeof tempA === "string") {
@@ -29,6 +29,13 @@ function compare_one(a, b) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     const assert = require("assert");
     assert.strictEqual(candidate(1, 2), 2);

@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-//// BEGIN - CANONICAL SOLUTION
 /**
  * Create a function which returns the largest index of an element which
  * is not greater than or equal to the element immediately preceding it. If
@@ -14,6 +13,7 @@
  * @returns {number}
  */
 function can_arrange(arr) {
+//// BEGIN - CANONICAL SOLUTION
     let ind = -1;
     let i = 1;
     while (i < arr.length) {
@@ -26,7 +26,13 @@ function can_arrange(arr) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate([1,2,4,3,5]), 3);
