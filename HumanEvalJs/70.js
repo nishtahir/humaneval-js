@@ -5,11 +5,11 @@
  * then maximum of the remaining integers, then minimum and so on.
  *
  * Examples:
- * strange_sort_list([1, 2, 3, 4]) == [1, 4, 2, 3]
- * strange_sort_list([5, 5, 5, 5]) == [5, 5, 5, 5]
- * strange_sort_list([]) == []
+ * strangeSortList([1, 2, 3, 4]) == [1, 4, 2, 3]
+ * strangeSortList([5, 5, 5, 5]) == [5, 5, 5, 5]
+ * strangeSortList([]) == []
  */
-function strange_sort_list(lst) {
+function strangeSortList(lst) {
 //// BEGIN - CANONICAL SOLUTION
     const res = [];
     let toggle = true;
@@ -22,8 +22,11 @@ function strange_sort_list(lst) {
     }
     return res;
 }
+
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate([1, 2, 3, 4]), [1, 4, 2, 3]);
@@ -38,5 +41,6 @@ function check(candidate) {
     // Check some edge cases that are easy to work out by hand.
     assert(true);
 }
+
 //// BEGIN - CHECK
-check(strange_sort_list);
+check(strangeSortList);

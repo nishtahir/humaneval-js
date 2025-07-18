@@ -6,10 +6,10 @@
  * Three sides make a valid triangle when the sum of any two sides is greater
  * than the third side.
  * Example:
- * triangle_area(3, 4, 5) === 6.00
- * triangle_area(1, 2, 10) === -1
+ * triangleArea(3, 4, 5) === 6.00
+ * triangleArea(1, 2, 10) === -1
  */
-function triangle_area(a, b, c) {
+function triangleArea(a, b, c) {
 //// BEGIN - CANONICAL SOLUTION
     if (a + b <= c || a + c <= b || b + c <= a) {
         return -1;
@@ -20,6 +20,7 @@ function triangle_area(a, b, c) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
 
 function check(candidate) {
@@ -38,4 +39,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(triangle_area);
+check(triangleArea);

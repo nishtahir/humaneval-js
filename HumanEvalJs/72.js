@@ -5,23 +5,19 @@
  * is less than or equal to the maximum possible weight w.
  *
  * Example:
- * will_it_fly([1, 2], 5) ➞ false
+ * willItFly([1, 2], 5) ➞ false
  * // 1+2 is less than the maximum possible weight, but it's unbalanced.
  *
- * will_it_fly([3, 2, 3], 1) ➞ false
+ * willItFly([3, 2, 3], 1) ➞ false
  * // it's balanced, but 3+2+3 is more than the maximum possible weight.
  *
- * will_it_fly([3, 2, 3], 9) ➞ true
+ * willItFly([3, 2, 3], 9) ➞ true
  * // 3+2+3 is less than the maximum possible weight, and it's balanced.
  *
- * will_it_fly([3], 5) ➞ true
+ * willItFly([3], 5) ➞ true
  * // 3 is less than the maximum possible weight, and it's balanced.
- *
- * @param {number[]} q - Array representing the object's weights.
- * @param {number} w - Maximum possible weight.
- * @returns {boolean} True if the object will fly, otherwise false.
  */
-function will_it_fly(q, w) {
+function willItFly(q, w) {
 //// BEGIN - CANONICAL SOLUTION
     if (q.reduce((a, b) => a + b, 0) > w) {
         return false;
@@ -38,6 +34,7 @@ function will_it_fly(q, w) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
 
 function check(candidate) {
@@ -53,4 +50,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(will_it_fly);
+check(willItFly);

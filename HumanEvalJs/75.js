@@ -4,11 +4,11 @@
  * and false otherwise.
  * Knowing that (a) is less then 100.
  * Example:
- * is_multiply_prime(30) === true
+ * isMultiplyPrime(30) === true
  * 30 = 2 * 3 * 5
  */
+function isMultiplyPrime(a) {
 //// BEGIN - CANONICAL SOLUTION
-function is_multiply_prime(a) {
     function is_prime(n) {
         for (let j = 2; j < n; j++) {
             if (n % j === 0) {
@@ -32,18 +32,21 @@ function is_multiply_prime(a) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
+const assert = require('assert');
+
 function check(candidate) {
-    console.assert(candidate(5) === false);
-    console.assert(candidate(30) === true);
-    console.assert(candidate(8) === true);
-    console.assert(candidate(10) === false);
-    console.assert(candidate(125) === true);
-    console.assert(candidate(3 * 5 * 7) === true);
-    console.assert(candidate(3 * 6 * 7) === false);
-    console.assert(candidate(9 * 9 * 9) === false);
-    console.assert(candidate(11 * 9 * 9) === false);
-    console.assert(candidate(11 * 13 * 7) === true);
+    assert.ok(candidate(5) === false);
+    assert.ok(candidate(30) === true);
+    assert.ok(candidate(8) === true);
+    assert.ok(candidate(10) === false);
+    assert.ok(candidate(125) === true);
+    assert.ok(candidate(3 * 5 * 7) === true);
+    assert.ok(candidate(3 * 6 * 7) === false);
+    assert.ok(candidate(9 * 9 * 9) === false);
+    assert.ok(candidate(11 * 9 * 9) === false);
+    assert.ok(candidate(11 * 13 * 7) === true);
 }
 
 //// BEGIN - CHECK
-check(is_multiply_prime);
+check(isMultiplyPrime);

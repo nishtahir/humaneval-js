@@ -12,16 +12,13 @@
  * and symbols A,B,C,D,E,F are always uppercase.
  *
  * Examples:
- * hex_key("AB") === 1
- * hex_key("1077E") === 2
- * hex_key("ABED1A33") === 4
- * hex_key("123456789ABCDEF0") === 6
- * hex_key("2020") === 2
- *
- * @param {string|Array} num - Hexadecimal number as a string
- * @returns {number} Count of prime hexadecimal digits
+ * For num = "AB" the output should be 1.
+ * For num = "1077E" the output should be 2.
+ * For num = "ABED1A33" the output should be 4.
+ * For num = "123456789ABCDEF0" the output should be 6.
+ * For num = "2020" the output should be 2.
  */
-function hex_key(num) {
+function hexKey(num) {
 //// BEGIN - CANONICAL SOLUTION
     const primes = ['2', '3', '5', '7', 'B', 'D'];
     let total = 0;
@@ -34,7 +31,9 @@ function hex_key(num) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate("AB"), 1, "First test error: " + candidate("AB"));
@@ -49,4 +48,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(hex_key);
+check(hexKey);

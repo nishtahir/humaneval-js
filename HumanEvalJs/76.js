@@ -4,15 +4,15 @@
  * power of n and false in other cases.
  * x is a simple power of n if n**int = x
  * For example:
- * is_simple_power(1, 4) => true
- * is_simple_power(2, 2) => true
- * is_simple_power(8, 2) => true
- * is_simple_power(3, 2) => false
- * is_simple_power(3, 1) => false
- * is_simple_power(5, 3) => false
+ * isSimplePower(1, 4) => true
+ * isSimplePower(2, 2) => true
+ * isSimplePower(8, 2) => true
+ * isSimplePower(3, 2) => false
+ * isSimplePower(3, 1) => false
+ * isSimplePower(5, 3) => false
  */
+function isSimplePower(x, n) {
 //// BEGIN - CANONICAL SOLUTION
-function is_simple_power(x, n) {
     if (n === 1) {
         return x === 1;
     }
@@ -22,8 +22,11 @@ function is_simple_power(x, n) {
     }
     return power === x;
 }
+
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate(16, 2), true, "This prints if this assert fails 1 (good for debugging!)");
@@ -40,4 +43,4 @@ function check(candidate) {
     assert.strictEqual(candidate(1, 12), true, "This prints if this assert fails 2 (also good for debugging!)");
 }
 //// BEGIN - CHECK
-check(is_simple_power);
+check(isSimplePower);
