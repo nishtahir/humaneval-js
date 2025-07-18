@@ -32,6 +32,7 @@ function maximum(arr, k) {
     arr.sort((a, b) => a - b);
     return arr.slice(-k);
 }
+
 //// BEGIN - TEST
 const METADATA = {
     author: 'jt',

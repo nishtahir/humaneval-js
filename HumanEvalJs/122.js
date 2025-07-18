@@ -27,7 +27,7 @@ const METADATA = {
     dataset: 'test'
 };
 
-const assert = require('assert');T
+const assert = require('assert');
 
 function check(candidate) {
     // Check some simple cases

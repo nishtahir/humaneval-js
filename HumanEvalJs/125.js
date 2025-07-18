@@ -39,6 +39,7 @@ const METADATA = {
 };
 
 const assert = require('assert');
+
 function check(candidate) {
     assert.deepStrictEqual(candidate("Hello world!"), ["Hello", "world!"]);
     assert.deepStrictEqual(candidate("Hello,world!"), ["Hello", "world!"]);
