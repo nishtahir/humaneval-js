@@ -40,7 +40,13 @@ function get_odd_collatz(n) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate(14), [1, 5, 7, 11, 13, 17]);

@@ -15,15 +15,21 @@
  * @param {number} k
  * @returns {number}
  */
-//// BEGIN - CANONICAL SOLUTION
 function addElements(arr, k) {
+//// BEGIN - CANONICAL SOLUTION
     return arr.slice(0, k)
         .filter(elem => String(elem).length <= 2)
         .reduce((sum, elem) => sum + elem, 0);
 }
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');T
+
 function check(candidate) {
-    const assert = require('assert');
     // Check some simple cases
     assert.strictEqual(candidate([1, -2, -3, 41, 57, 76, 87, 88, 99], 3), -4);
     assert.strictEqual(candidate([111, 121, 3, 4000, 5, 6], 2), 0);
@@ -33,5 +39,6 @@ function check(candidate) {
     // Check some edge cases that are easy to work out by hand.
     assert.strictEqual(candidate([1], 1), 1, "This prints if this assert fails 2 (also good for debugging!)");
 }
+
 //// BEGIN - CHECK
 check(addElements);
