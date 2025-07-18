@@ -4,23 +4,22 @@
  * of boredoms. A boredom is a sentence that starts with the word "I".
  * Sentences are delimited by '.', '?' or '!'.
  *
- * @param {string} S - input string of words
- * @returns {number} - number of boredoms
- *
  * @example
  * // 0
- * is_bored("Hello world");
+ * isBored("Hello world");
  * @example
  * // 1
- * is_bored("The sky is blue. The sun is shining. I love this weather");
+ * isBored("The sky is blue. The sun is shining. I love this weather");
  */
+function isBored(S) {
 //// BEGIN - CANONICAL SOLUTION
-function is_bored(S) {
     const sentences = S.split(/[.?!]\s*/);
     return sentences.reduce((count, sentence) => count + (sentence.slice(0, 2) === 'I ' ? 1 : 0), 0);
 }
+
 //// BEGIN - TEST
 const assert = require('assert');
+
 function check(candidate) {
     assert.strictEqual(candidate("Hello world"), 0, "Test 1");
     assert.strictEqual(candidate("Is the sky blue?"), 0, "Test 2");
@@ -30,5 +29,6 @@ function check(candidate) {
     assert.strictEqual(candidate("You and I are going for a walk"), 0, "Test 6");
     assert.ok(true, "This prints if this assert fails 2 (also good for debugging!)");
 }
+
 //// BEGIN - CHECK
-check(is_bored);
+check(isBored);
