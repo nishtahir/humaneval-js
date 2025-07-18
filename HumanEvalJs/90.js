@@ -1,23 +1,25 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * You are given an array of integers.
- * Write a function next_smallest() that returns the 2nd smallest element of the array.
+ * Write a function nextSmallest() that returns the 2nd smallest element of the array.
  * Return null if there is no such element.
- *
- * next_smallest([1, 2, 3, 4, 5]) === 2
- * next_smallest([5, 1, 4, 3, 2]) === 2
- * next_smallest([]) === null
- * next_smallest([1, 1]) === null
- */
+*
+* nextSmallest([1, 2, 3, 4, 5]) === 2
+* nextSmallest([5, 1, 4, 3, 2]) === 2
+* nextSmallest([]) === null
+* nextSmallest([1, 1]) === null
+*/
+function nextSmallest(lst) {
 //// BEGIN - CANONICAL SOLUTION
-function next_smallest(lst) {
     const unique = Array.from(new Set(lst));
     unique.sort((a, b) => a - b);
     return unique.length < 2 ? null : unique[1];
 }
+
 //// BEGIN - TEST
+const METADATA = {};
+const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate([1, 2, 3, 4, 5]), 2);
@@ -31,5 +33,6 @@ function check(candidate) {
     // Check some edge cases that are easy to work out by hand.
     assert.ok(true);
 }
+
 //// BEGIN - CHECK
-check(next_smallest);
+check(nextSmallest);

@@ -19,46 +19,46 @@
  *     > 0.7                D 
  *     > 0.0                D-
  *       0.0                E
- *
- * @param {number[]} grades
- * @returns {string[]}
  */
-function numerical_letter_grade(grades) {
-    const letter_grade = [];
+function numericalLetterGrade(grades) {
+//// BEGIN - CANONICAL SOLUTION
+    const letterGrade = [];
     for (const gpa of grades) {
         if (gpa === 4.0) {
-            letter_grade.push("A+");
+            letterGrade.push("A+");
         } else if (gpa > 3.7) {
-            letter_grade.push("A");
+            letterGrade.push("A");
         } else if (gpa > 3.3) {
-            letter_grade.push("A-");
+            letterGrade.push("A-");
         } else if (gpa > 3.0) {
-            letter_grade.push("B+");
+            letterGrade.push("B+");
         } else if (gpa > 2.7) {
-            letter_grade.push("B");
+            letterGrade.push("B");
         } else if (gpa > 2.3) {
-            letter_grade.push("B-");
+            letterGrade.push("B-");
         } else if (gpa > 2.0) {
-            letter_grade.push("C+");
+            letterGrade.push("C+");
         } else if (gpa > 1.7) {
-            letter_grade.push("C");
+            letterGrade.push("C");
         } else if (gpa > 1.3) {
-            letter_grade.push("C-");
+            letterGrade.push("C-");
         } else if (gpa > 1.0) {
-            letter_grade.push("D+");
+            letterGrade.push("D+");
         } else if (gpa > 0.7) {
-            letter_grade.push("D");
+            letterGrade.push("D");
         } else if (gpa > 0.0) {
-            letter_grade.push("D-");
+            letterGrade.push("D-");
         } else {
-            letter_grade.push("E");
+            letterGrade.push("E");
         }
     }
-    return letter_grade;
+    return letterGrade;
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
     assert.deepStrictEqual(candidate([4.0, 3, 1.7, 2, 3.5]), ['A+', 'B', 'C-', 'C', 'A-']);
     assert.deepStrictEqual(candidate([1.2]), ['D+']);
@@ -69,4 +69,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(numerical_letter_grade);
+check(numericalLetterGrade);

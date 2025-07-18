@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * Write a function that takes a string and returns an ordered version of it.
@@ -9,11 +7,12 @@ const assert = require('assert');
  * Note: You should keep the order of words and blank spaces in the sentence.
  *
  * For example:
- * anti_shuffle('Hi') returns 'Hi'
- * anti_shuffle('hello') returns 'ehllo'
- * anti_shuffle('Hello World!!!') returns 'Hello !!!Wdlor'
+ * antiShuffle('Hi') returns 'Hi'
+ * antiShuffle('hello') returns 'ehllo'
+ * antiShuffle('Hello World!!!') returns 'Hello !!!Wdlor'
  */
-function anti_shuffle(s) {
+function antiShuffle(s) {
+//// BEGIN - CANONICAL SOLUTION
   return s
     .split(' ')
     .map(i => i.split('').sort().join(''))
@@ -21,6 +20,9 @@ function anti_shuffle(s) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
+const assert = require('assert');
+
 function check(candidate) {
   // Check some simple cases
   assert.strictEqual(candidate('Hi'), 'Hi');
@@ -38,4 +40,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(anti_shuffle);
+check(antiShuffle);

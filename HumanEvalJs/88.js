@@ -8,17 +8,14 @@
  *  * don't change the given array.
  *
  * Examples:
- *  * sort_array([]) => []
- *  * sort_array([5]) => [5]
- *  * sort_array([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]
- *  * sort_array([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]
- *
- * @param {number[]} array - array of non-negative integers
- * @returns {number[]} sorted copy of the array
+ *  * sortArray([]) => []
+ *  * sortArray([5]) => [5]
+ *  * sortArray([2, 4, 3, 0, 1, 5]) => [0, 1, 2, 3, 4, 5]
+ *  * sortArray([2, 4, 3, 0, 1, 5, 6]) => [6, 5, 4, 3, 2, 1, 0]
  */
 
-//// BEGIN - CANONICAL SOLUTION
-function sort_array(array) {
+function sortArray(array) {
+    //// BEGIN - CANONICAL SOLUTION
     if (array.length === 0) return [];
     const reverse = (array[0] + array[array.length - 1]) % 2 === 0;
     const copy = array.slice();
@@ -26,7 +23,9 @@ function sort_array(array) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate([]), []);
@@ -41,4 +40,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(sort_array);
+check(sortArray);

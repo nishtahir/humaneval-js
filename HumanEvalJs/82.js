@@ -2,16 +2,14 @@
 /**
  * Write a function that takes a string and returns true if the string
  * length is a prime number or false otherwise
- * @param {string} string
- * @returns {boolean}
  * Examples:
  * primeLength('Hello') === true
  * primeLength('abcdcba') === true
  * primeLength('kittens') === true
  * primeLength('orange') === false
  */
-//// BEGIN - CANONICAL SOLUTION
 function primeLength(string) {
+//// BEGIN - CANONICAL SOLUTION
     const l = string.length;
     if (l === 0 || l === 1) {
         return false;
@@ -23,8 +21,11 @@ function primeLength(string) {
     }
     return true;
 }
+
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate('Hello'), true);
@@ -45,5 +46,6 @@ function check(candidate) {
     assert.strictEqual(candidate('M'), false);
     assert.strictEqual(candidate('0'), false);
 }
+
 //// BEGIN - CHECK
 check(primeLength);

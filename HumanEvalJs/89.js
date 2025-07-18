@@ -10,9 +10,8 @@
  * encrypt('gf') returns 'kj'
  * encrypt('et') returns 'ix'
  */
-
-//// BEGIN - CANONICAL SOLUTION
 function encrypt(s) {
+    //// BEGIN - CANONICAL SOLUTION
     const d = 'abcdefghijklmnopqrstuvwxyz';
     let out = '';
     for (const c of s) {
@@ -26,6 +25,7 @@ function encrypt(s) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
 
 function check(candidate) {
