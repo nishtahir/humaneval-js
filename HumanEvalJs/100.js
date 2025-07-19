@@ -9,14 +9,19 @@
  * i represents the number of stones in the level (i+1).
  *
  * Examples:
- * console.log(make_a_pile(3)); // [3, 5, 7]
+ * console.log(makeAPile(3)); // [3, 5, 7]
  */
-function make_a_pile(n) {
+function makeAPile(n) {
 //// BEGIN - CANONICAL SOLUTION
     return Array.from({ length: n }, (_, i) => n + 2 * i);
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
 
 function check(candidate) {
@@ -32,4 +37,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(make_a_pile);
+check(makeAPile);
