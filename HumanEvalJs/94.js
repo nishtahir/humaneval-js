@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-
 /**
  * You are given a list of integers.
  * You need to find the largest prime value and return the sum of its digits.
@@ -35,7 +34,7 @@ function skjkasdkd(lst) {
 }
 
 //// BEGIN - TEST
-
+const METADATA = {};
 const assert = require('assert');
 
 function check(candidate) {

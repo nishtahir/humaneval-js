@@ -8,10 +8,6 @@
  * multiply(19, 28) should return 72.
  * multiply(2020, 1851) should return 0.
  * multiply(14,-15) should return 20.
- *
- * @param {number} a - first integer
- * @param {number} b - second integer
- * @returns {number} product of the unit digits
  */
 function multiply(a, b) {
 //// BEGIN - CANONICAL SOLUTION
@@ -19,7 +15,9 @@ function multiply(a, b) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate(148, 412), 16, "First test error: " + candidate(148, 412));

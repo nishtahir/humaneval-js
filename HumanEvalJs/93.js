@@ -5,9 +5,6 @@
  * the message with the letter that appears 2 places ahead of that
  * vowel in the english alphabet.
  * Assume only letters.
- *
- * @param {string} message
- * @returns {string}
  * @example
  * // returns 'TGST'
  * encode('test');
@@ -33,6 +30,7 @@ function encode(message) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
 
 function check(candidate) {
