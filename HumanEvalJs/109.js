@@ -18,17 +18,17 @@
  *
  * For Example:
  *
- * move_one_ball([3, 4, 5, 1, 2]) ==> true
+ * moveOneBall([3, 4, 5, 1, 2]) ==> true
  * Explanation: By performing 2 right shift operations, non-decreasing order can
  * be achieved for the given array.
- * move_one_ball([3, 5, 4, 1, 2]) ==> false
+ * moveOneBall([3, 5, 4, 1, 2]) ==> false
  * Explanation: It is not possible to get non-decreasing order for the given
  * array by performing any number of right shift operations.
  */
 
+function moveOneBall(arr) {
 //// BEGIN - CANONICAL SOLUTION
-function move_one_ball(arr) {
-    if (arr.length === 0) {
+    if(arr.length === 0) {
         return true;
     }
     const sorted_array = [...arr].sort((a, b) => a - b);
@@ -36,7 +36,7 @@ function move_one_ball(arr) {
     const min_index = arr.indexOf(min_value);
     const my_arr = arr.slice(min_index).concat(arr.slice(0, min_index));
     for (let i = 0; i < arr.length; i++) {
-        if (my_arr[i] !== sorted_array[i]) {
+        if(my_arr[i], sorted_array[i]) {
             return false;
         }
     }
@@ -44,15 +44,22 @@ function move_one_ball(arr) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
-    if (candidate([3, 4, 5, 1, 2]) !== true) throw new Error("This prints if this assert fails 1 (good for debugging!)");
-    if (candidate([3, 5, 10, 1, 2]) !== true) throw new Error("Assertion failed for [3, 5, 10, 1, 2]");
-    if (candidate([4, 3, 1, 2]) !== false) throw new Error("Assertion failed for [4, 3, 1, 2]");
+    assert.strictEqual(candidate([3, 4, 5, 1, 2]), true);
+    assert.strictEqual(candidate([3, 5, 10, 1, 2]), true);
+    assert.strictEqual(candidate([4, 3, 1, 2]), false);
     // Check some edge cases that are easy to work out by hand.
-    if (candidate([3, 5, 4, 1, 2]) !== false) throw new Error("This prints if this assert fails 2 (also good for debugging!)");
-    if (candidate([]) !== true) throw new Error("Assertion failed for []");
+    assert.strictEqual(candidate([3, 5, 4, 1, 2]), false);
+    assert.strictEqual(candidate([]), true);
 }
 
 //// BEGIN - CHECK
-check(move_one_ball);
+check(moveOneBall);

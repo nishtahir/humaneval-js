@@ -1,9 +1,11 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
-
-//// BEGIN - CANONICAL SOLUTION
-function digits_sum(n) {
+/**
+ * Write a function countNums which takes an array of integers and returns
+ * the number of elements which has a sum of digits > 0.
+ * If a number is negative, then its first signed digit will be negative:
+ * e.g. -123 has signed digits -1, 2, and 3.
+ */
+function digitsSum(n) {
   let neg = 1;
   if (n < 0) {
     n = -n;
@@ -14,27 +16,29 @@ function digits_sum(n) {
   return digits.reduce((sum, d) => sum + d, 0);
 }
 
-/**
- * Write a function count_nums which takes an array of integers and returns
- * the number of elements which has a sum of digits > 0.
- * If a number is negative, then its first signed digit will be negative:
- * e.g. -123 has signed digits -1, 2, and 3.
- *
- * @param {number[]} arr
+/* @param {number[]} arr
  * @returns {number}
  *
  * @example
- * count_nums([]) === 0
+ * countNums([]) === 0
  * @example
- * count_nums([-1, 11, -11]) === 1
+ * countNums([-1, 11, -11]) === 1
  * @example
- * count_nums([1, 1, 2]) === 3
+ * countNums([1, 1, 2]) === 3
  */
-function count_nums(arr) {
-  return arr.map(digits_sum).filter(x => x > 0).length;
+function countNums(arr) {
+//// BEGIN - CANONICAL SOLUTION
+  return arr.map(digitsSum).filter(x => x > 0).length;
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
   assert.strictEqual(candidate([]), 0);
   assert.strictEqual(candidate([-1, -2, 0]), 0);
@@ -49,4 +53,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(count_nums);
+check(countNums);

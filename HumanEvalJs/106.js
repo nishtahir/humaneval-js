@@ -10,8 +10,8 @@
  * @param {number} n
  * @returns {number[]}
  */
-//// BEGIN - CANONICAL SOLUTION
 function f(n) {
+//// BEGIN - CANONICAL SOLUTION
     const ret = [];
     for (let i = 1; i <= n; i++) {
         if (i % 2 === 0) {
@@ -30,13 +30,21 @@ function f(n) {
     }
     return ret;
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.deepStrictEqual(candidate(5), [1, 2, 6, 24, 15]);
     assert.deepStrictEqual(candidate(7), [1, 2, 6, 24, 15, 720, 28]);
     assert.deepStrictEqual(candidate(1), [1]);
     assert.deepStrictEqual(candidate(3), [1, 2, 6]);
 }
+
 //// BEGIN - CHECK
 check(f);

@@ -23,9 +23,8 @@
  * @param {number[]} arr
  * @returns {string[]}
  */
-
+function byLength(arr) {
 //// BEGIN - CANONICAL SOLUTION
-function by_length(arr) {
     const dic = {
         1: "One",
         2: "Two",
@@ -48,7 +47,13 @@ function by_length(arr) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.ok(true, "This prints if this assert fails 1 (good for debugging!)");
@@ -63,4 +68,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(by_length);
+check(byLength);
