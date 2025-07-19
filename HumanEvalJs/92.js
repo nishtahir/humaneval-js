@@ -5,12 +5,13 @@
  * Returns false in any other cases.
  *
  * Examples:
- * any_int(5, 2, 7) ➞ true
- * any_int(3, 2, 2) ➞ false
- * any_int(3, -2, 1) ➞ true
- * any_int(3.6, -2.2, 2) ➞ false
+ * anyInt(5, 2, 7) ➞ true
+ * anyInt(3, 2, 2) ➞ false
+ * anyInt(3, -2, 1) ➞ true
+ * anyInt(3.6, -2.2, 2) ➞ false
  */
-function any_int(x, y, z) {
+function anyInt(x, y, z) {
+//// BEGIN - CANONICAL SOLUTION
   if (Number.isInteger(x) && Number.isInteger(y) && Number.isInteger(z)) {
     if (x + y === z || x + z === y || y + z === x) {
       return true;
@@ -21,7 +22,9 @@ function any_int(x, y, z) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
   // Check some simple cases
   assert.strictEqual(candidate(2, 3, 1), true, "This prints if this assert fails 1 (good for debugging!)");
@@ -39,4 +42,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(any_int);
+check(anyInt);

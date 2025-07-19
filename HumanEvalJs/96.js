@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * Implement a function that takes a non-negative integer and returns an array of the first n
@@ -11,10 +9,9 @@ const assert = require('assert');
  * countUpTo(20) => [2,3,5,7,11,13,17,19]
  * countUpTo(1) => []
  * countUpTo(18) => [2,3,5,7,11,13,17]
- */
-
-//// BEGIN - CANONICAL SOLUTION
+*/
 function countUpTo(n) {
+//// BEGIN - CANONICAL SOLUTION
     const primes = [];
     for (let i = 2; i < n; i++) {
         let isPrime = true;
@@ -32,6 +29,9 @@ function countUpTo(n) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
+const assert = require('assert');
+
 function check(candidate) {
     assert.deepStrictEqual(candidate(5), [2, 3]);
     assert.deepStrictEqual(candidate(6), [2, 3, 5]);
