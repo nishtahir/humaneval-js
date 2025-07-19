@@ -45,7 +45,9 @@ function checkDictCase(obj) {
 }
 
 //// BEGIN - TEST
+const METADATA = {};
 const assert = require('assert');
+
 function check(candidate) {
   assert(candidate({"p":"pineapple", "b":"banana"}) === true, "First test error: " + candidate({"p":"pineapple", "b":"banana"}));
   assert(candidate({"p":"pineapple", "A":"banana", "B":"banana"}) === false, "Second test error: " + candidate({"p":"pineapple", "A":"banana", "B":"banana"}));
