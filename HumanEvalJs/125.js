@@ -14,8 +14,8 @@
  * @returns {string[]|number}
  */
 
-//// BEGIN - CANONICAL SOLUTION
 function splitWords(txt) {
+//// BEGIN - CANONICAL SOLUTION
     if (txt.includes(' ')) {
         return txt.split(/\s+/);
     } else if (txt.includes(',')) {
@@ -33,7 +33,13 @@ function splitWords(txt) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     assert.deepStrictEqual(candidate("Hello world!"), ["Hello", "world!"]);
     assert.deepStrictEqual(candidate("Hello,world!"), ["Hello", "world!"]);

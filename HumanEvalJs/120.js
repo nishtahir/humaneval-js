@@ -24,16 +24,23 @@
  * @param {number} k
  * @returns {number[]}
  */
-//// BEGIN - CANONICAL SOLUTION
 function maximum(arr, k) {
+//// BEGIN - CANONICAL SOLUTION
     if (k === 0) {
         return [];
     }
     arr.sort((a, b) => a - b);
     return arr.slice(-k);
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate([-3, -4, 5], 3), [-4, -3, 5]);
@@ -49,5 +56,6 @@ function check(candidate) {
     // Check some edge cases that are easy to work out by hand.
     assert.deepStrictEqual(candidate([1, 2, 3, -23, 243, -400, 0], 0), []);
 }
+
 //// BEGIN - CHECK
 check(maximum)

@@ -27,8 +27,8 @@
  *     Input: grid = [ [5,9,3], [4,1,6], [7,8,2]], k = 1
  *     Output: [1]
  */
-//// BEGIN - CANONICAL SOLUTION
 function minPath(grid, k) {
+//// BEGIN - CANONICAL SOLUTION
     const n = grid.length;
     let val = n * n + 1;
     for (let i = 0; i < n; i++) {
@@ -61,9 +61,16 @@ function minPath(grid, k) {
     }
     return ans;
 }
+
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
-    const assert = require('assert');
     // Check some simple cases
     assert.deepStrictEqual(candidate([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 3), [1, 2, 1]);
     assert.deepStrictEqual(candidate([[5, 9, 3], [4, 1, 6], [7, 8, 2]], 1), [1]);
@@ -78,5 +85,6 @@ function check(candidate) {
     assert.deepStrictEqual(candidate([[1, 2], [3, 4]], 10), [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]);
     assert.deepStrictEqual(candidate([[1, 3], [3, 2]], 10), [1, 3, 1, 3, 1, 3, 1, 3, 1, 3]);
 }
+
 //// BEGIN - CHECK
 check(minPath);
