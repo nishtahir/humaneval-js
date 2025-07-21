@@ -5,13 +5,13 @@
  * there's no such number, then the function should return -1.
  *
  * For example:
- * choose_num(12, 15) = 14
- * choose_num(13, 12) = -1
+ * chooseNum(12, 15) = 14
+ * chooseNum(13, 12) = -1
  * @param {number} x
  * @param {number} y
  * @returns {number}
  */
-function choose_num(x, y) {
+function chooseNum(x, y) {
 //// BEGIN - CANONICAL SOLUTION
     if (x > y) {
         return -1;
@@ -26,7 +26,13 @@ function choose_num(x, y) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate(12, 15), 14);
@@ -42,4 +48,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(choose_num);
+check(chooseNum);

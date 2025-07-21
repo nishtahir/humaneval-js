@@ -17,7 +17,11 @@ function makeAPile(n) {
 }
 
 //// BEGIN - TEST
-const METADATA = {};
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
 
 function check(candidate) {

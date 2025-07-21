@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 //// BEGIN - PROMPT
 /**
  * You are given two positive integers n and m, and your task is to compute the
@@ -39,6 +37,13 @@ function roundedAvg(n, m) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
   // Check some simple cases
   assert.strictEqual(candidate(1, 5), "0b11");
