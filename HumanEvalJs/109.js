@@ -25,18 +25,17 @@
  * Explanation: It is not possible to get non-decreasing order for the given
  * array by performing any number of right shift operations.
  */
-
 function moveOneBall(arr) {
 //// BEGIN - CANONICAL SOLUTION
     if(arr.length === 0) {
         return true;
     }
     const sorted_array = [...arr].sort((a, b) => a - b);
-    const min_value = Math.min(...arr);
-    const min_index = arr.indexOf(min_value);
-    const my_arr = arr.slice(min_index).concat(arr.slice(0, min_index));
+    const minValue = Math.min(...arr);
+    const minIndex = arr.indexOf(minValue);
+    const myArr = arr.slice(minIndex).concat(arr.slice(0, minIndex));
     for (let i = 0; i < arr.length; i++) {
-        if(my_arr[i], sorted_array[i]) {
+        if(myArr[i] !== sorted_array[i]) {
             return false;
         }
     }

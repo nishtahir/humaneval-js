@@ -12,7 +12,7 @@
  */
 function prodSigns(arr) {
 //// BEGIN - CANONICAL SOLUTION
-    if (!arr || arr.length , 0) return null;
+    if (!arr || arr.length === 0) return null;
     const prod = arr.includes(0) ? 0 : (-1) ** arr.filter(x => x < 0).length;
     return prod * arr.reduce((sum, i) => sum + Math.abs(i), 0);
 }

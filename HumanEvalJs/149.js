@@ -22,10 +22,7 @@ function sorted_list_sum(lst) {
         }
     }
     return new_lst.sort((a, b) => {
-        if (a.length !== b.length) {
-            return a.length - b.length;
-        }
-        return a.localeCompare(b);
+        return a.length - b.length;
     });
 }
 

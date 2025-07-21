@@ -13,7 +13,7 @@
 function anyInt(x, y, z) {
 //// BEGIN - CANONICAL SOLUTION
   if (Number.isInteger(x) && Number.isInteger(y) && Number.isInteger(z)) {
-    if (x + y === z || x + z === y || y + z === x) {
+    if ((x + y === z) || (x + z === y) || (y + z === x)) {
       return true;
     }
     return false;
@@ -38,7 +38,10 @@ function check(candidate) {
   // Check some edge cases that are easy to work out by hand.
   assert.strictEqual(candidate(2, 1, 1), true, "This prints if this assert fails 8 (also good for debugging!)");
   assert.strictEqual(candidate(3, 4, 7), true, "This prints if this assert fails 9 (also good for debugging!)");
-  assert.strictEqual(candidate(3.0, 4, 7), false, "This prints if this assert fails 10 (also good for debugging!)");
+  
+  // This test fails in JS because Javascript cannot distinguish between 3.0 and 3
+  // Since it drops the decimal part, 3.0 is equal to 3
+  // assert.strictEqual(candidate(3.0, 4, 7), false, "This prints if this assert fails 10 (also good for debugging!)");
 }
 
 //// BEGIN - CHECK

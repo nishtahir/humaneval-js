@@ -48,9 +48,6 @@ function check(candidate) {
         'the number of odd elements 3n the str3ng 3 of the 3nput.',
         'the number of odd elements 2n the str2ng 2 of the 2nput.'
     ], "Test 3");
-
-    // Check some edge cases that are easy to work out by hand.
-    assert.deepStrictEqual(true, "This prints if this assert fails 2 (also good for debugging!)");
 }
 
 //// BEGIN - CHECK
