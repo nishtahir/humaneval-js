@@ -13,18 +13,18 @@
  *   2. returned list sorted in increasing order.
  *
  * For example:
- * get_odd_collatz(5) returns [1, 5] // The collatz sequence for 5 is [5, 16, 8, 4, 2, 1], so the odd numbers are only 1 and 5.
+ * getOddCollatz(5) returns [1, 5] // The collatz sequence for 5 is [5, 16, 8, 4, 2, 1], so the odd numbers are only 1 and 5.
  *
  * @param {number} n
  * @returns {number[]}
  */
-function get_odd_collatz(n) {
+function getOddCollatz(n) {
 //// BEGIN - CANONICAL SOLUTION
-    let odd_collatz;
+    let oddCollatz;
     if (n % 2 === 0) {
-        odd_collatz = [];
+        oddCollatz = [];
     } else {
-        odd_collatz = [n];
+        oddCollatz = [n];
     }
     while (n > 1) {
         if (n % 2 === 0) {
@@ -33,14 +33,20 @@ function get_odd_collatz(n) {
             n = n * 3 + 1;
         }
         if (n % 2 === 1) {
-            odd_collatz.push(n);
+            oddCollatz.push(n);
         }
     }
-    return odd_collatz.sort((a, b) => a - b);
+    return oddCollatz.sort((a, b) => a - b);
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.deepStrictEqual(candidate(14), [1, 5, 7, 11, 13, 17]);
@@ -51,4 +57,4 @@ function check(candidate) {
 }
 
 //// BEGIN - CHECK
-check(get_odd_collatz)
+check(getOddCollatz)

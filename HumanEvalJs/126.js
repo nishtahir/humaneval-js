@@ -15,6 +15,7 @@
  * isSorted([1, 2, 2, 2, 3, 4]) => false
  */
 function isSorted(lst) {
+//// BEGIN - CANONICAL SOLUTION
   // Count occurrences of each number
   const countDigit = {};
   for (const i of lst) {
@@ -39,7 +40,13 @@ function isSorted(lst) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
   // Check some simple cases
   assert.strictEqual(candidate([5]), true);

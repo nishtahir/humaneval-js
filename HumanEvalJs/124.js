@@ -1,5 +1,4 @@
 //// BEGIN - PROMPT
-//// BEGIN - CANONICAL SOLUTION
 /**
  * You have to write a function which validates a given date string and
  * returns true if the date is valid otherwise false.
@@ -15,6 +14,7 @@
  * @returns {boolean}
  */
 function validDate(date) {
+//// BEGIN - CANONICAL SOLUTION
     try {
         const str = date.trim();
         const parts = str.split('-');
@@ -38,7 +38,13 @@ function validDate(date) {
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
 const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
     assert.strictEqual(candidate('03-11-2000'), true);

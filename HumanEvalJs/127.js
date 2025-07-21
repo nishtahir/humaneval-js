@@ -19,7 +19,6 @@
  * intersection([-3, -1], [-5, 5]) ==> "YES"
  */
 
-//// BEGIN - CANONICAL SOLUTION
 /**
  * Check if a number is prime.
  * @param {number} num
@@ -47,28 +46,36 @@ function isPrime(num) {
  * @returns {string} "YES" if prime length, otherwise "NO"
  */
 function intersection(interval1, interval2) {
+//// BEGIN - CANONICAL SOLUTION
     const l = Math.max(interval1[0], interval2[0]);
     const r = Math.min(interval1[1], interval2[1]);
     const length = r - l;
-    if (length > 0 && isPrime(length)) {
+    if(length > 0 && isPrime(length)) {
         return "YES";
     }
     return "NO";
 }
 
 //// BEGIN - TEST
+const METADATA = {
+    author: 'jt',
+    dataset: 'test'
+};
+
+const assert = require('assert');
+
 function check(candidate) {
     // Check some simple cases
-    if (candidate([1, 2], [2, 3]) !== "NO") throw new Error("Test 1 failed");
-    if (candidate([-1, 1], [0, 4]) !== "NO") throw new Error("Test 2 failed");
-    if (candidate([-3, -1], [-5, 5]) !== "YES") throw new Error("Test 3 failed");
-    if (candidate([-2, 2], [-4, 0]) !== "YES") throw new Error("Test 4 failed");
+    assert.strictEquals(candidate([1, 2], [2, 3]), "NO");
+    assert.strictEquals(candidate([-1, 1], [0, 4]), "NO");
+    assert.strictEquals(candidate([-3, -1], [-5, 5]), "YES");
+    assert.strictEquals(candidate([-2, 2], [-4, 0]), "YES");
 
     // Check some edge cases that are easy to work out by hand.
-    if (candidate([-11, 2], [-1, -1]) !== "NO") throw new Error("Test 5 failed");
-    if (candidate([1, 2], [3, 5]) !== "NO") throw new Error("Test 6 failed");
-    if (candidate([1, 2], [1, 2]) !== "NO") throw new Error("Test 7 failed");
-    if (candidate([-2, -2], [-3, -2]) !== "NO") throw new Error("Test 8 failed");
+    assert.strictEquals(candidate([-11, 2], [-1, -1]), "NO");
+    assert.strictEquals(candidate([1, 2], [3, 5]), "NO");
+    assert.strictEquals(candidate([1, 2], [1, 2]), "NO");
+    assert.strictEquals(candidate([-2, -2], [-3, -2]), "NO");
 }
 
 //// BEGIN - CHECK
