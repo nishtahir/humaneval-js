@@ -6,11 +6,7 @@
  * For example:
  * wordsString("Hi, my name is John") == ["Hi", "my", "name", "is", "John"]
  * wordsString("One, two, three, four, five, six") == ["One", "two", "three", "four", "five", "six"]
- *
- * @param {string} s - input string
- * @returns {string[]} array of words
  */
-
 function wordsString(s) {
 //// BEGIN - CANONICAL SOLUTION
   if (!s) {
@@ -29,25 +25,19 @@ function wordsString(s) {
 }
 
 //// BEGIN - TEST
-const METADATA = {
-    author: 'jt',
-    dataset: 'test'
-};
-
+const METADATA = {};
 const assert = require('assert');
 
 function check(candidate) {
   // Check some simple cases
-  assert.ok(true, "This prints if this assert fails 1 (good for debugging!)");
-  assert.strictEqual(JSON.stringify(candidate("Hi, my name is John")), JSON.stringify(["Hi","my","name","is","John"]));
-  assert.strictEqual(JSON.stringify(candidate("One, two, three, four, five, six")), JSON.stringify(["One","two","three","four","five","six"]));
-  assert.strictEqual(JSON.stringify(candidate("Hi, my name")), JSON.stringify(["Hi","my","name"]));
-  assert.strictEqual(JSON.stringify(candidate("One,, two, three, four, five, six,")), JSON.stringify(["One","two","three","four","five","six"]));
+  assert.deepStrictEqual(candidate("Hi, my name is John"), ["Hi", "my", "name", "is", "John"]);
+  assert.deepStrictEqual(candidate("One, two, three, four, five, six"), ["One", "two", "three", "four", "five", "six"]);
+  assert.deepStrictEqual(candidate("Hi, my name"), ["Hi", "my", "name"]);
+  assert.deepStrictEqual(candidate("One,, two, three, four, five, six,"), ["One", "two", "three", "four", "five", "six"]);
 
   // Check some edge cases that are easy to work out by hand.
-  assert.ok(true, "This prints if this assert fails 2 (also good for debugging!)");
-  assert.strictEqual(JSON.stringify(candidate("")), JSON.stringify([]));
-  assert.strictEqual(JSON.stringify(candidate("ahmed     , gamal")), JSON.stringify(["ahmed","gamal"]));
+  assert.deepStrictEqual(candidate(""), []);
+  assert.deepStrictEqual(candidate("ahmed     , gamal"), ["ahmed", "gamal"]);
 }
 
 //// BEGIN - CHECK

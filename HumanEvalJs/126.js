@@ -16,21 +16,21 @@
  */
 function isSorted(lst) {
 //// BEGIN - CANONICAL SOLUTION
-  // Count occurrences of each number
   const countDigit = {};
   for (const i of lst) {
     countDigit[i] = 0;
   }
+
   for (const i of lst) {
     countDigit[i]++;
   }
-  // Return false if any number appears more than twice
+
   for (const i of lst) {
     if (countDigit[i] > 2) {
       return false;
     }
   }
-  // Check if list is sorted in ascending order
+  
   for (let index = 1; index < lst.length; index++) {
     if (lst[index - 1] > lst[index]) {
       return false;
